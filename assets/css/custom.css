@@ -1,3 +1,6 @@
+div#root {
+    overflow: hidden;
+}
 .hero_slider{
     height: 500px;
 }
