@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- TODO: Set the document title to the name of your application -->
+	<title> App</title>
+	<!-- AOS Library -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" crossorigin="" href="/assets/css/indexhbs.css">
+	<link rel="stylesheet" crossorigin="" href="/assets/css/custom.css">
+	<!-- Slick CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+</head>
+
+<body>
+	<div id="root">
+		<div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+			<ol tabindex="-1"
+				class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
+			</ol>
+		</div>
+		<section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text"
+			aria-atomic="false">
+		</section>
+		<div class="min-h-screen flex flex-col">
+			<header class="w-full bg-card shadow-sm sticky top-0 z-50">
+				<div class="bg-secondary py-1">
+					<div class="container flex items-center justify-between">
+						<div class="flex items-center gap-4 text-xs text-secondary-foreground/80"><a
+								href="mailto:sales@grtelectronics.com"
+								class="flex items-center gap-1 hover:text-primary transition-colors"><svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" class="lucide lucide-mail h-3 w-3">
+									<rect width="20" height="16" x="2" y="4" rx="2"></rect>
+									<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+								</svg>sales@grtelectronics.com</a><a href="tel:9198211996"
+								class="flex items-center gap-1 hover:text-primary transition-colors"><svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" class="lucide lucide-phone h-3 w-3">
+									<path
+										d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+									</path>
+								</svg>(919) 821-1996</a></div><a href="/quote"><button
+								class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 rounded-md bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6">Submit
+								Quote</button></a>
+					</div>
+				</div>
+				<div class="container py-4">
+					<div class="flex items-center justify-between"><a class="flex items-center" href="/">
+							<div class="flex items-center"><span class="text-3xl font-bold text-primary">G</span><span
+									class="text-3xl font-bold text-foreground">RT</span>
+								<div class="ml-1 flex flex-col leading-tight"><span
+										class="text-xs font-semibold text-primary tracking-wider">ELECTRONICS</span>
+								</div>
+							</div>
+						</a>
+						<nav class="hidden lg:flex items-center gap-8"><a
+								class="text-sm font-medium transition-colors hover:text-primary text-primary"
+								href="/">Home</a><a
+								class="text-sm font-medium transition-colors hover:text-primary text-foreground"
+								href="/industries">Industries &amp; Applications</a><a
+								class="text-sm font-medium transition-colors hover:text-primary text-foreground"
+								href="/services">Services</a><a
+								class="text-sm font-medium transition-colors hover:text-primary text-foreground"
+								href="/projects">Projects</a><a
+								class="text-sm font-medium transition-colors hover:text-primary text-foreground"
+								href="/equipment">Equipment</a><a
+								class="text-sm font-medium transition-colors hover:text-primary text-foreground"
+								href="/quality">Quality</a><a
+								class="text-sm font-medium transition-colors hover:text-primary text-foreground"
+								href="/about">About Us</a><a href="/contact"><button
+									class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">CONTACT</button></a>
+						</nav><button class="lg:hidden p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6">
+								<line x1="4" x2="20" y1="12" y2="12"></line>
+								<line x1="4" x2="20" y1="6" y2="6"></line>
+								<line x1="4" x2="20" y1="18" y2="18"></line>
+							</svg></button>
+					</div>
+				</div>
+			</header>
+			<main class="flex-1">
+				<section class="hero_slider">
+					<div class="relative inset-0 transition-opacity duration-700 opacity-100"
+						style="background: url(/assets/images/pcb-assembly-1-CdQMtmvB.jpg);">						
+							<div data-aos="slide-left" data-aos-duration="1000"
+								class="absolute top-4 right-4 bg-card rounded-lg shadow-lg border border-primary/20">
+								<img src="/assets/images/iso-logo.png" alt="ISO 9001:2015 Certified" class="h-20 md:h-28 w-auto">
+							</div>
+						<div class="hero_content p-8 md:p-16">
+							<div class="container" data-aos="slide-up" data-aos-duration="1000">
+								<h2 class="text-3xl md:text-5xl font-bold text-card mb-4" >PCB Assembly &amp; Mechanical
+									Control Assembly</h2>
+								<p class="text-lg md:text-xl text-card/90 max-w-2xl">More than 40 years
+									experience
+									building PCB assembly and mechanical control assemblies</p>
+							</div>
+						</div>						
+					</div>
+					<div class="relative inset-0 transition-opacity duration-700 opacity-100"
+						style="background: url(/assets/images/pcb-assembly-2-CV7xWlK6.jpg);">
+						<div data-aos="slide-left" data-aos-duration="1000"
+								class="absolute top-4 right-4 bg-card rounded-lg shadow-lg border border-primary/20">
+								<img src="/assets/images/iso-logo.png" alt="ISO 9001:2015 Certified" class="h-20 md:h-28 w-auto">
+							</div>
+						<div class="hero_content p-8 md:p-16">
+							<div class="container" data-aos="slide-up" data-aos-duration="1000">
+								<h2 class="text-3xl md:text-5xl font-bold text-card mb-4 aos-init aos-animate"
+									data-aos="slide-left" data-aos-duration="1000">PCB Assembly &amp; Mechanical
+									Control Assembly</h2>
+								<p class="text-lg md:text-xl text-card/90 max-w-2xl">More than 40 years
+									experience
+									building PCB assembly and mechanical control assemblies</p>
+							</div>
+						</div>
+					</div>
+					<div class="relative inset-0 transition-opacity duration-700 opacity-100"
+						style="background: url(/assets/images/pcb-assembly-3-D96IbKOd.jpg);">
+						<div data-aos="slide-left" data-aos-duration="1000"
+								class="absolute top-4 right-4 bg-card rounded-lg shadow-lg border border-primary/20">
+								<img src="/assets/images/iso-logo.png" alt="ISO 9001:2015 Certified" class="h-20 md:h-28 w-auto">
+							</div>
+						<div class="hero_content p-8 md:p-16">
+							<div class="container" data-aos="slide-up" data-aos-duration="1000">
+								<h2 class="text-3xl md:text-5xl font-bold text-card mb-4 aos-init aos-animate"
+									data-aos="slide-left" data-aos-duration="1000">PCB Assembly &amp; Mechanical
+									Control Assembly</h2>
+								<p class="text-lg md:text-xl text-card/90 max-w-2xl">More than 40 years
+									experience
+									building PCB assembly and mechanical control assemblies</p>
+							</div>
+						</div>
+					</div>
+					
+
+				</section>
+				<section class="py-16 bg-muted/20">
+					<div class="container" >
+						<h2 class="text-3xl md:text-4xl font-bold text-primary text-center mb-4" data-aos="fade-up" data-aos-duration="1000">Latest News &amp;
+							Insights</h2>
+						<p class="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">Stay updated with the
+							latest from GRT Electronics</p>
+						<div class="grid md:grid-cols-3 gap-6">
+							<article
+								class="bg-card rounded-lg border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all group cursor-pointer">
+								<span class="text-xs font-semibold text-primary uppercase tracking-wider">Industry
+									Insights</span>
+								<h3
+									class="text-lg font-bold text-foreground mt-2 mb-3 group-hover:text-primary transition-colors">
+									The Future of AI Server Rack Assembly</h3>
+								<p class="text-sm text-muted-foreground mb-4 leading-relaxed">How GRT Electronics is
+									leading the way in high-performance computing infrastructure with precision rack
+									integration.</p>
+								<div class="flex items-center justify-between"><span
+										class="text-xs text-muted-foreground">Feb 10, 2026</span><span
+										class="text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">Read
+										more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+											stroke-linecap="round" stroke-linejoin="round"
+											class="lucide lucide-arrow-right h-3 w-3">
+											<path d="M5 12h14"></path>
+											<path d="m12 5 7 7-7 7"></path>
+										</svg></span></div>
+							</article>
+							<article
+								class="bg-card rounded-lg border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all group cursor-pointer">
+								<span class="text-xs font-semibold text-primary uppercase tracking-wider">Quality</span>
+								<h3
+									class="text-lg font-bold text-foreground mt-2 mb-3 group-hover:text-primary transition-colors">
+									Quality Standards in PCB Manufacturing</h3>
+								<p class="text-sm text-muted-foreground mb-4 leading-relaxed">Our ISO 9001:2015
+									certified processes ensure every board meets the highest reliability standards.</p>
+								<div class="flex items-center justify-between"><span
+										class="text-xs text-muted-foreground">Jan 28, 2026</span><span
+										class="text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">Read
+										more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+											stroke-linecap="round" stroke-linejoin="round"
+											class="lucide lucide-arrow-right h-3 w-3">
+											<path d="M5 12h14"></path>
+											<path d="m12 5 7 7-7 7"></path>
+										</svg></span></div>
+							</article>
+							<article
+								class="bg-card rounded-lg border border-border p-6 hover:shadow-lg hover:border-primary/30 transition-all group cursor-pointer">
+								<span
+									class="text-xs font-semibold text-primary uppercase tracking-wider">Engineering</span>
+								<h3
+									class="text-lg font-bold text-foreground mt-2 mb-3 group-hover:text-primary transition-colors">
+									DFM Review: Reducing Cost Without Compromising Quality</h3>
+								<p class="text-sm text-muted-foreground mb-4 leading-relaxed">Learn how Design for
+									Manufacturability reviews save time and money during production.</p>
+								<div class="flex items-center justify-between"><span
+										class="text-xs text-muted-foreground">Jan 15, 2026</span><span
+										class="text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">Read
+										more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+											stroke-linecap="round" stroke-linejoin="round"
+											class="lucide lucide-arrow-right h-3 w-3">
+											<path d="M5 12h14"></path>
+											<path d="m12 5 7 7-7 7"></path>
+										</svg></span></div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<section class="py-16">
+					<div class="container max-w-4xl">
+						<h2 class="text-3xl md:text-4xl font-bold text-primary text-center mb-8">Electronics
+							Manufacturing</h2>
+						<p class="text-muted-foreground text-center mb-8 leading-relaxed">GRT Electronics is a contract
+							manufacturer offering full production services for our clients' electronic and
+							electromechanical products. We are dedicated to responsive, schedule-driven performance with
+							open communication to our clients.</p>
+						<div class="bg-card p-8 rounded-lg shadow-sm">
+							<p class="text-foreground mb-6 font-medium">We primarily serve customers searching for the
+								following services:</p>
+							<ul class="space-y-3" data-aos="fade-left" data-aos-duration="1000">
+								<li class="flex items-start gap-3"><span class="text-primary mt-1">•</span><span
+										class="text-muted-foreground">Quick-turn prototype production</span></li>
+								<li class="flex items-start gap-3"><span class="text-primary mt-1">•</span><span
+										class="text-muted-foreground">Contract manufacturing<span class="text-accent">;
+											mostly 1-2000 unit runs, but have gone as high as 5000 for a single
+											run</span></span></li>
+								<li class="flex items-start gap-3"><span class="text-primary mt-1">•</span><span
+										class="text-muted-foreground">Turn-key, consigned, combined kit builds</span>
+								</li>
+								<li class="flex items-start gap-3"><span class="text-primary mt-1">•</span><span
+										class="text-muted-foreground">Prototype/Production design assistance</span></li>
+								<li class="flex items-start gap-3"><span class="text-primary mt-1">•</span><span
+										class="text-muted-foreground">Consultation<span class="text-accent">;
+											problem-solving, cost reduction, production engineering</span></span></li>
+								<li class="flex items-start gap-3"><span class="text-primary mt-1">•</span><span
+										class="text-muted-foreground">Component XRAY services</span></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="py-12 bg-muted/30">
+					<div class="container">
+						<h3
+							class="text-xl font-semibold text-center text-muted-foreground mb-8 tracking-wide uppercase">
+							Trusted By Industry Leaders</h3>
+						<div class="flex flex-wrap items-center justify-center gap-8 md:gap-14">
+							<div data-aos="fade-up" data-aos-duration="1000" 
+								class="flex items-center justify-center px-6 py-4 bg-card rounded-lg border border-border shadow-sm min-w-[140px] hover:shadow-md hover:border-primary/30 transition-all">
+								<span class="text-lg md:text-xl font-bold text-foreground/80 tracking-wide">ABB</span>
+							</div>
+							<div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
+								class="flex items-center justify-center px-6 py-4 bg-card rounded-lg border border-border shadow-sm min-w-[140px] hover:shadow-md hover:border-primary/30 transition-all">
+								<span
+									class="text-lg md:text-xl font-bold text-foreground/80 tracking-wide">SIEMENS</span>
+							</div>
+							<div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"
+								class="flex items-center justify-center px-6 py-4 bg-card rounded-lg border border-border shadow-sm min-w-[140px] hover:shadow-md hover:border-primary/30 transition-all">
+								<span class="text-lg md:text-xl font-bold text-foreground/80 tracking-wide">EATON</span>
+							</div>
+							<div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"
+								class="flex items-center justify-center px-6 py-4 bg-card rounded-lg border border-border shadow-sm min-w-[140px] hover:shadow-md hover:border-primary/30 transition-all">
+								<span class="text-lg md:text-xl font-bold text-foreground/80 tracking-wide">Parameter
+									Tech</span>
+							</div>
+							<div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800"
+								class="flex items-center justify-center px-6 py-4 bg-card rounded-lg border border-border shadow-sm min-w-[140px] hover:shadow-md hover:border-primary/30 transition-all">
+								<span
+									class="text-lg md:text-xl font-bold text-foreground/80 tracking-wide">Flologic</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="py-16 bg-muted">
+					<div class="container">
+						<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+							<div class="text-center p-6 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow">
+								<div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+										height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+										class="lucide lucide-star h-12 w-12 text-primary">
+										<path
+											d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+										</path>
+									</svg></div>
+								<h3 class="text-lg font-semibold text-accent mb-3">Quality</h3>
+								<p class="text-sm text-muted-foreground leading-relaxed">We are an ISO 9001:2015
+									Registered contract manufacturing company. All of our assemblers are knowledgeable
+									of IPC and ESD practices and all products are assembled to IPC-610 standards.</p>
+							</div>
+							<div class="text-center p-6 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow">
+								<div class="flex justify-center mb-4"><span
+										class="text-5xl font-bold text-primary">40+</span></div>
+								<h3 class="text-lg font-semibold text-accent mb-3">Experience</h3>
+								<p class="text-sm text-muted-foreground leading-relaxed">With over 40 years experience
+									in electronics manufacturing, GRT has a strong knowledge base regarding the
+									production process.</p>
+							</div>
+							<div class="text-center p-6 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow">
+								<div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+										height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+										class="lucide lucide-building2 h-12 w-12 text-primary">
+										<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+										<path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+										<path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+										<path d="M10 6h4"></path>
+										<path d="M10 10h4"></path>
+										<path d="M10 14h4"></path>
+										<path d="M10 18h4"></path>
+									</svg></div>
+								<h3 class="text-lg font-semibold text-accent mb-3">Small Business</h3>
+								<p class="text-sm text-muted-foreground leading-relaxed">GRT is a single-owner small
+									business operating out of Raleigh, North Carolina, USA since 2001!</p>
+							</div>
+							<div class="text-center p-6 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow">
+								<div class="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+										height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+										class="lucide lucide-key h-12 w-12 text-primary">
+										<path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"></path>
+										<path d="m21 2-9.6 9.6"></path>
+										<circle cx="7.5" cy="15.5" r="5.5"></circle>
+									</svg></div>
+								<h3 class="text-lg font-semibold text-accent mb-3">True Turn-Key Service</h3>
+								<p class="text-sm text-muted-foreground leading-relaxed">GRT offers turn-key kit
+									service, meaning we take the stress of ordering parts and maintaining inventory off
+									your plate.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="py-16">
+					<div class="container">
+						<h2 class="text-3xl md:text-4xl font-bold text-primary text-center mb-4">Our Projects</h2>
+						<p class="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">From AI server
+							infrastructure to industrial control systems, we deliver precision manufacturing for complex
+							electromechanical assemblies.</p>
+						<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+							<div
+								class="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+								<div class="h-56 overflow-hidden"><img src="/assets/images/control-panel-Cm7qgHqh.jpg"
+										alt="AI Server Rack Assembly"
+										class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+								</div>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-primary mb-2">AI Server Rack Assembly</h3>
+									<p class="text-muted-foreground text-sm mb-4">Complete rack integration solutions
+										for high-performance computing</p>
+									<ul class="space-y-2 mb-6">
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Rack Integration</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Cable Management</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Thermal Subsystem</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Comprehensive Testing
+										</li>
+									</ul><a
+										class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
+										href="/projects#server-rack">Learn More <svg xmlns="http://www.w3.org/2000/svg"
+											width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+											stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+											class="lucide lucide-arrow-right h-4 w-4">
+											<path d="M5 12h14"></path>
+											<path d="m12 5 7 7-7 7"></path>
+										</svg></a>
+								</div>
+							</div>
+							<div
+								class="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+								<div class="h-56 overflow-hidden"><img src="/assets/images/switchboard-T7asSHKk.jpg"
+										alt="Switchboard Assembly"
+										class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+								</div>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-primary mb-2">Switchboard Assembly</h3>
+									<p class="text-muted-foreground text-sm mb-4">Industrial switchboard manufacturing
+										with full compliance</p>
+									<ul class="space-y-2 mb-6">
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>UL/CSA Compliance</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Power System
+											Integration</li>
+									</ul><a
+										class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
+										href="/projects#switchboard">Learn More <svg xmlns="http://www.w3.org/2000/svg"
+											width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+											stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+											class="lucide lucide-arrow-right h-4 w-4">
+											<path d="M5 12h14"></path>
+											<path d="m12 5 7 7-7 7"></path>
+										</svg></a>
+								</div>
+							</div>
+							<div
+								class="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+								<div class="h-56 overflow-hidden"><img src="/assets/images/control-panel-Cm7qgHqh.jpg"
+										alt="Control Panel Assemblies"
+										class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+								</div>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-primary mb-2">Control Panel Assemblies</h3>
+									<p class="text-muted-foreground text-sm mb-4">Custom automation control solutions
+									</p>
+									<ul class="space-y-2 mb-6">
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Custom Wiring Harness
+										</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>HMI/PLC Integration
+										</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Functional Testing
+										</li>
+									</ul><a
+										class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
+										href="/projects#control-panel">Learn More <svg
+											xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+											stroke-linecap="round" stroke-linejoin="round"
+											class="lucide lucide-arrow-right h-4 w-4">
+											<path d="M5 12h14"></path>
+											<path d="m12 5 7 7-7 7"></path>
+										</svg></a>
+								</div>
+							</div>
+							<div
+								class="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+								<div class="h-56 overflow-hidden"><img
+										src="/assets/images/engineering-support-DN1Bskzz.jpg" alt="Value Added Services"
+										class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+								</div>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-primary mb-2">Value Added Services</h3>
+									<p class="text-muted-foreground text-sm mb-4">Engineering support and extended
+										services</p>
+									<ul class="space-y-2 mb-6">
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Engineering Support
+											&amp; DFM Review</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Testing and Burn-in
+										</li>
+										<li class="flex items-center gap-2 text-sm text-foreground"><span
+												class="w-1.5 h-1.5 bg-accent rounded-full"></span>Supply Chain Sourcing
+										</li>
+									</ul><a
+										class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
+										href="/projects#value-added">Learn More <svg xmlns="http://www.w3.org/2000/svg"
+											width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+											stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+											class="lucide lucide-arrow-right h-4 w-4">
+											<path d="M5 12h14"></path>
+											<path d="m12 5 7 7-7 7"></path>
+										</svg></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</main>
+			<footer class="bg-secondary text-secondary-foreground">
+				<div class="container py-6 flex justify-center"><a href="/contact"><button
+							class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8">CONTACT</button></a>
+				</div>
+				<div class="container py-8">
+					<div class="grid md:grid-cols-3 gap-8">
+						<div>
+							<h3 class="text-xl font-bold mb-1">GRT Electronics, LLC.</h3>
+							<p class="text-sm text-secondary-foreground/80">Contract Manufacturing</p>
+							<nav class="mt-6 flex flex-col gap-2"><a class="text-sm text-primary hover:underline"
+									href="/">Home</a><a class="text-sm text-primary hover:underline"
+									href="/services">Services</a><a class="text-sm text-primary hover:underline"
+									href="/products">Products</a><a class="text-sm text-primary hover:underline"
+									href="/equipment">Equipment</a><a class="text-sm text-primary hover:underline"
+									href="/about">About Us</a></nav>
+						</div>
+						<div class="flex justify-center items-center">
+							<div class="bg-card p-4 rounded-lg shadow-md"><img src="/assets/images/iso-logo.png"
+									alt="ISO 9001:2015 Certified - Quality Management" class="h-24 w-auto"></div>
+						</div>
+						<div class="text-right">
+							<p class="text-sm">3805 Beryl Rd</p>
+							<p class="text-sm">Raleigh, NC 27607</p>
+							<p class="text-sm mt-2">(919) 821-1996</p>
+						</div>
+					</div>
+				</div>
+				<div class="border-t border-secondary-foreground/20 py-4">
+					<div class="container text-right">
+						<p class="text-xs text-secondary-foreground/60">Copyright © 2026 GRT Electronics, LLC.</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+
+
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- Slick JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		// Initialize AOS
+		AOS.init({
+			duration: 400,
+			easing: 'ease-in-out',
+			once: false,
+			offset: 100
+		});
+	</script>
+
+	<script>
+		$('.hero_slider').slick({
+			dots: true,
+			fade: true,
+			infinite: true,			
+			autoplay: true,
+			autoplaySpeed: 400,
+			speed: 1600,			
+			slidesToShow: 1,
+		});
+		
+		// Don't show the -badge if the page is in an iframe or if it's being rendered by puppeteer (screenshot service)
+		if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
+			// the page is in an iframe
+			var badge = document.getElementById('-badge');
+			if (badge) {
+				badge.style.display = 'none';
+			}
+		}
+
+		// Add click event listener to close button with animation
+		var closeButton = document.getElementById('-badge-close');
+		if (closeButton) {
+			closeButton.addEventListener('click', function (event) {
+				event.preventDefault();
+				event.stopPropagation();
+				var badge = document.getElementById('-badge');
+				if (badge) {
+					badge.classList.add('closing');
+					setTimeout(function () {
+						if (badge) {
+							badge.style.display = 'none';
+						}
+					}, 240);
+				}
+			});
+		}
+	</script>
+
+</body>
+
+</html>

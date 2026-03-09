@@ -1,0 +1,28 @@
+.hero_slider{
+    height: 500px;
+}
+.hero_slider.slick-slider .slick-list, 
+.hero_slider.slick-slider .slick-track{
+    height: 100%;
+}
+.hero_slider.slick-slider .slick-next {
+    right: 20px;    
+}
+.hero_slider.slick-slider .slick-next::before,
+.hero_slider.slick-slider .slick-prev::before {    
+    font-size: 40px;
+    border-radius: 100px;    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.hero_slider.slick-slider .slick-prev {
+    left: 20px;
+    z-index: 9;  
+}
+.hero_content {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    background: #00000052;
+}

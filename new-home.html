@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRT Electronics - Contract Manufacturing</title>
+
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a472a;
+            --secondary-color: #2d5f3f;
+            --accent-color: #28a745;
+            --accent-light: #e8f5e9;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f5f5f5;
+            --bg-white: #ffffff;
+            --border-color: #eeeeee;
+            --footer-bg: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-contact {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-contact:hover {
+            background-color: #1e8e3a;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            animation: slideInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--accent-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+
+        /* Latest News Section */
+        .news-section {
+            background-color: var(--bg-light);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-category {
+            display: inline-block;
+            background-color: var(--accent-light);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .news-card h3 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .news-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .news-date {
+            color: var(--text-light);
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Electronics Manufacturing Section */
+        .manufacturing-section {
+            background-color: var(--bg-white);
+        }
+
+        .manufacturing-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .manufacturing-content p {
+            color: var(--text-light);
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .services-list {
+            text-align: left;
+            margin-top: 40px;
+            list-style: none;
+        }
+
+        .services-list li {
+            padding: 10px 0;
+            font-size: 16px;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .services-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .partners-title {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .partner-logo {
+            padding: 20px;
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            font-weight: 600;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--bg-white);
+            padding: 60px 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .stat-description {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background-color: var(--bg-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .project-features li {
+            color: var(--text-light);
+            font-size: 13px;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .project-features li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .learn-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: #ffffff;
+            padding: 50px 20px 30px;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: var(--accent-color);
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444444;
+            padding-top: 30px;
+            font-size: 13px;
+            color: #999999;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-contact p {
+            margin: 5px 0;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            nav a.mobile-show {
+                display: inline;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            header .container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo"><a class="flex items-center" href="/">
+                    <div class="flex items-center"><span class="text-3xl font-bold text-primary">G</span><span
+                            class="text-3xl font-bold text-foreground">RT</span>
+                        <div class="ml-1 flex flex-col leading-tight"><span
+                                class="text-xs font-semibold text-primary tracking-wider">ELECTRONICS</span></div>
+                    </div>
+                </a></div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#industries">Industries & Applications</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#equipment">Equipment</a>
+                <a href="#quality">Quality</a>
+                <a href="#about">About Us</a>
+                <a href="#contact" class="btn-contact">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-aos="slide-left" data-aos-duration="1000">PCB Assembly & Mechanical Control Assembly</h1>
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">With 40+ years experience building PCB
+                assemblies and mechanical control assemblies</p>
+            <div class="hero-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="news-section" id="news">
+        <div class="container">
+            <h2 data-aos="fade-up">Latest News & Insights</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Stay updated with the latest from GRT
+                Electronics</p>
+
+            <div class="news-grid">
+                <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-category">INDUSTRY INSIGHTS</div>
+                    <h3>The Future of AI Server Rack Assembly</h3>
+                    <p>How GRT Electronics is leading the way in high-performance computing infrastructure with
+                        precision assembly.</p>
+                    <p class="news-date">Jan 15, 2025</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-category">QUALITY</div>
+                    <h3>Quality Standards in PCB Manufacturing</h3>
+                    <p>Our IPC-9001 certified processes ensure you meet the highest reliability standards.</p>
+                    <p class="news-date">Jan 10, 2024</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+
+                <div class="news-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-category">ENGINEERING</div>
+                    <h3>DFM Review: Reducing Cost Without Compromising Quality</h3>
+                    <p>Learn how Design for Manufacturability review save time and money during production.</p>
+                    <p class="news-date">Jan 11, 2024</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronics Manufacturing Section -->
+    <section class="manufacturing-section" id="services">
+        <div class="container">
+            <h2 data-aos="slide-left">Electronics Manufacturing</h2>
+            <div class="manufacturing-content">
+                <p data-aos="fade-up" data-aos-delay="100">
+                    GRT Electronics is a contract manufacturer offering full production services for our clients
+                    electronics and electro-mechanical products. We are dedicated to responsive, schedule-driven
+                    performance with open communication to our clients.
+                </p>
+
+                <p data-aos="fade-up" data-aos-delay="150" style="font-weight: 600; color: var(--text-dark);">
+                    We primarily serve customers searching for the following services:
+                </p>
+
+                <ul class="services-list">
+                    <li data-aos="fade-left" data-aos-delay="200">Quick-turn prototype production</li>
+                    <li data-aos="fade-left" data-aos-delay="250">Contract manufacturing <span class="highlight">supply
+                            1-2000 unit runs, but have gone as high as 5000 for a single run</span></li>
+                    <li data-aos="fade-left" data-aos-delay="300">Turn-key consigned, consigned kit builds</li>
+                    <li data-aos="fade-left" data-aos-delay="350">Prototypes/Production design assistance</li>
+                    <li data-aos="fade-left" data-aos-delay="400">Consultation <span class="highlight">problem-solving
+                            cost reduction, production engineering</span></li>
+                    <li data-aos="fade-left" data-aos-delay="450">Component RoHS services</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <p class="partners-title" data-aos="fade-up">TRUSTED BY INDUSTRY LEADERS</p>
+            <div class="partners-grid">
+                <div class="partner-logo" data-aos="zoom-in" data-aos-delay="100">ABB</div>
+                <div class="partner-logo" data-aos="zoom-in" data-aos-delay="150">SIEMENS</div>
+                <div class="partner-logo" data-aos="zoom-in" data-aos-delay="200">EATON</div>
+                <div class="partner-logo" data-aos="zoom-in" data-aos-delay="250">Parameter Tech</div>
+                <div class="partner-logo" data-aos="zoom-in" data-aos-delay="300">Flogic</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="quality">
+        <div class="stats-grid">
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-number"></div>
+                <div class="stat-label">Quality</div>
+                <p class="stat-description">We are ISO 9001:2015 registered, a contract manufacturing company. All of
+                    our assemblers are knowledgeable of IPC standards and certified per IPC-A-610 standards.</p>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-icon">40+</div>
+                <div class="stat-label">Experience</div>
+                <p class="stat-description">With over 40 years experience in electronics manufacturing, GRT has a strong
+                    knowledge base regarding the production process.</p>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="stat-icon">🏢</div>
+                <div class="stat-label">Small Business</div>
+                <p class="stat-description">GRT is a small, woman-owned business operating out of Raleigh, North
+                    Carolina (USA since 2001).</p>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="stat-icon">🔧</div>
+                <div class="stat-label">True Turn-Key Service</div>
+                <p class="stat-description">GRT offers full turn-key services, managing inventory of all your parts and
+                    maintaining complete records of your parts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 data-aos="slide-right">Our Projects</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">From AI server infrastructure to
+                industrial control systems, we deliver precision manufacturing for complex electro-mechanical
+                assemblies.</p>
+
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop"
+                        alt="AI Server Rack Assembly" class="project-image">
+                    <div class="project-content">
+                        <h3>AI Server Rack Assembly</h3>
+                        <p>High-performance server infrastructure assemblies for demanding computing applications.</p>
+                        <ul class="project-features">
+                            <li>Circuit Board Integration</li>
+                            <li>Rack Integration</li>
+                            <li>Cable Management</li>
+                            <li>Thermal Subsystem</li>
+                            <li>Comprehensive Testing</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=300&fit=crop"
+                        alt="Switchboard Assembly" class="project-image">
+                    <div class="project-content">
+                        <h3>Switchboard Assembly</h3>
+                        <p>Custom electrical switchboard solutions with integrated control systems.</p>
+                        <ul class="project-features">
+                            <li>Assembly with Testing</li>
+                            <li>Compliance Verification</li>
+                            <li>UL/CSA Compliance</li>
+                            <li>Power System Integration</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1581092918270-4c02892c779c?w=500&h=300&fit=crop"
+                        alt="Control Panel Assemblies" class="project-image">
+                    <div class="project-content">
+                        <h3>Control Panel Assemblies</h3>
+                        <p>Custom automation and control panel integration for industrial applications.</p>
+                        <ul class="project-features">
+                            <li>Custom Design Services</li>
+                            <li>Certified Assembly</li>
+                            <li>NFPA/IEC Integration</li>
+                            <li>Functional Testing</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
+                        alt="Value Added Services" class="project-image">
+                    <div class="project-content">
+                        <h3>Value Added Services</h3>
+                        <p>Engineering support and additional services for product enhancement.</p>
+                        <ul class="project-features">
+                            <li>Engineering Review</li>
+                            <li>Testing and Burn-in</li>
+                            <li>Supply Chain Services</li>
+                            <li>Documentation Support</li>
+                        </ul>
+                        <a href="#" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background-color: var(--primary-color); color: white; text-align: center; padding: 60px 20px;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px;" data-aos="fade-up">Ready to Work With Us?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; color: #ddd;" data-aos="fade-up" data-aos-delay="100">
+                Contact us today to discuss your manufacturing needs and get a quote for your project.</p>
+            <button class="btn-contact" data-aos="fade-up" data-aos-delay="200">CONTACT US</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <h4>GRT Electronics, LLC.</h4>
+                <p>Contract Manufacturing</p>
+            </div>
+
+            <div>
+                <h4>Company</h4>
+                <p><a href="#">Home</a></p>
+                <p><a href="#">About Us</a></p>
+                <p><a href="#">Projects</a></p>
+                <p><a href="#">Quality</a></p>
+            </div>
+
+            <div>
+                <h4>Services</h4>
+                <p><a href="#">Industries & Applications</a></p>
+                <p><a href="#">Contract Manufacturing</a></p>
+                <p><a href="#">PCB Assembly</a></p>
+                <p><a href="#">Equipment</a></p>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>3505 Bend Rd</p>
+                <p>Raleigh, NC 27609</p>
+                <p>Phone: <a href="tel:+19195551766">(919) 555-1766</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 GRT Electronics LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hero slider dots functionality
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateDots();
+            });
+        });
+
+        // Auto-rotate hero slider
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            updateDots();
+        }, 5000);
+    </script>
+</body>
+
+</html>
