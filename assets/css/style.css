@@ -1,0 +1,447 @@
+body,
+html {
+  font-size: 16px;
+  line-height: 20px;
+  overflow-x: hidden;
+}
+
+body * {
+  outline: none;
+}
+
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+  outline: 0;
+}
+
+
+a {
+  -webkit-transition: all .3s ease-in 0s;
+  -moz-transition: all .3s ease-in 0s;
+  -ms-transition: all .3s ease-in 0s;
+  -o-transition: all .3s ease-in 0s;
+  transition: all .3s ease-in 0s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: #020202;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 1280px;
+}
+
+body {
+  /* font-family: "Figtree", sans-serif; */
+  font-family: "Inter", sans-serif;
+}
+
+.text-success {
+  color: #3ca638 !important;
+}
+
+.btn-success {
+  background-color: #3ca638;
+  border-color: #3ca638;
+}
+
+.bg-success {
+  background-color: #3ca638 !important;
+}
+
+.main-slider .slick-slide {
+  outline: none;
+}
+
+.btn.custom-btn {
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light.custom-btn:hover {
+  background-color: #3ca638;
+  border-color: #3ca638;
+  color: #fff;
+}
+
+.slider-content p.lead {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.pb-60 {
+  padding-bottom: 60px;
+}
+
+.pt-60 {
+  padding-top: 60px;
+}
+
+.text-muted {
+  color: rgb(64, 64, 64) !important;
+}
+
+header#header {
+  box-shadow: 0px 0px 3px rgb(0 0 0 / 12%);
+}
+
+.slider-item-bg {
+  background-size: cover;
+  background-position: center;
+  padding: 180px 0;
+  position: relative;
+  min-height: calc(100vh - 85px);
+  display: flex;
+  align-items: center;
+}
+
+.slider-content h1 {
+  color: #fff;
+}
+
+.slider-item-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-content {
+  position: relative;
+  z-index: 2;
+}
+
+.card-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+ul.check-list li {
+  margin-bottom: 12px;
+}
+
+.partner-logo-box {
+  background-color: white;
+  padding: 20px 10px;
+  font-weight: bold;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  border-radius: 4px;
+  color: #555;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) !important;
+  transition: transform 0.3s ease !important;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 6px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-item.active .nav-link {
+  color: #3ca638;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
+
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.slick-prev:hover,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-next:focus {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li button:before {
+  color: white;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #2F6D27;
+}
+
+.section-header h2 {
+  font-size: 36px;
+}
+
+.service-card p {
+  line-height: 22px;
+  font-size: 15px;
+}
+
+.service-card h3 {
+  font-size: 24px;
+}
+
+.service-card:hover {
+  transform: translateY(-5px) !important;
+  transition: all 0.3s !important;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  /* background: #3ca638; */
+}
+
+/* .service-card:hover h3,
+.service-card:hover p {
+  color: #fff !important;
+}
+
+.service-card:hover i {
+  color: #fff !important;
+} */
+
+.service-card {
+  border-radius: 12px;
+}
+
+.project-card h3 {
+  font-size: 24px;
+}
+
+.project-card p {
+  font-size: 14px;
+}
+
+.project-card ul li {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.main-slider {
+  margin-bottom: 0 !important;
+}
+
+.section-header p {
+  line-height: 22px;
+}
+
+.electrical-image img {
+  border-radius: 16px;
+}
+
+.electrical-content ul li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 15px;
+}
+
+.electrical-content ul li:before {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #3ca638;
+  margin-right: 10px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+/* .features-section {
+  background: url(http://grtelectronics.com/WhiteCircuit.png);
+  position: relative;
+} */
+
+/* .features-section:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.8;
+} */
+
+.partners-slider .slick-track {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.partners-slider img {
+  max-width: 140px;
+  margin: 0 auto;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.partners-slider img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.partners-slider .slick-slide {
+  padding: 0 15px;
+  outline: none;
+}
+
+.blog-grid h3 {
+  font-size: 24px;
+}
+
+.blog-grid {
+  border-radius: 12px;
+}
+
+.blog-grid:hover {
+  transform: translateY(-5px) !important;
+  transition: all 0.3s !important;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  /* background: #3ca638; */
+}
+
+.blog-grid p {
+  font-size: 14px;
+}
+
+.features-section h3 {
+  font-size: 20px;
+}
+
+.features-section p {
+  font-size: 14px;
+}
+
+.features-section .card {
+  border-radius: 12px;
+}
+
+.service-card .card-body {
+  display: flex;
+  padding: 0;
+  text-align: left;
+}
+
+.service-content {
+  margin-left: 20px;
+}
+
+.features-inner-box {
+  background: #3ca638;
+  padding: 50px;
+  border-radius: 24px;
+  position: relative;
+}
+
+.features-inner-box>.mb-4 {
+  margin-bottom: 0 !important;
+}
+
+.footer-about-text {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.footer-links li a {
+  opacity: 0.9;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links li a:hover {
+  color: #fff !important;
+}
+
+#footer {
+  background-image: url(https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.cotact-widget address {
+  opacity: 0.9;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.cotact-widget p a {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 300;
+  color: #fff;
+}
+
+.iso-logo img {
+  max-width: 220px;
+}
+
+.iso-logo {
+  float: right;
+}
