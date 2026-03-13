@@ -86,6 +86,7 @@ body {
 .slider-content p.lead {
   font-size: 18px;
   line-height: 26px;
+  margin: 0 auto;
 }
 
 .pb-60 {
@@ -125,12 +126,14 @@ header#header {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .slider-content {
   position: relative;
   z-index: 2;
+      max-width: 930px;
+    text-align: center;
 }
 
 .card-icon-wrapper {
@@ -301,16 +304,16 @@ ul.check-list li {
   position: relative;
 } */
 
-/* .features-section:before {
+ .features-section:before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background: #fff;
-  opacity: 0.8;
-} */
+  background: #000;
+  opacity: 0.7;
+} 
 
 .partners-slider .slick-track {
   display: flex !important;
@@ -376,12 +379,12 @@ ul.check-list li {
   margin-left: 20px;
 }
 
-.features-inner-box {
+/*.features-inner-box {
   background: #3ca638;
   padding: 50px;
   border-radius: 24px;
   position: relative;
-}
+}*/
 
 .features-inner-box>.mb-4 {
   margin-bottom: 0 !important;
@@ -444,4 +447,15 @@ ul.check-list li {
 
 .iso-logo {
   float: right;
+}
+
+.features-section {
+    background: url(../images/pcb-assembly-3.jpg);
+    position: relative;
+    padding: 60px 0px;
+    background-size: cover;
+    background-position: center;
+}
+.blog-grid .card-img-top { 
+    border-radius: 12px;
 }
