@@ -1,7 +1,12 @@
 /********************** Media Query *********************************/
 @media (max-width:1199px) {}
 
-@media (max-width: 991px) {}
+@media (max-width: 991px) {
+    .slider-item-bg {
+        padding: 180px 0;
+        min-height: 1px;
+    }
+}
 
 
 @media (max-width: 767px) {}
@@ -12,6 +17,26 @@
         width: 100%;
         margin-right: 0 !important;
         margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .iso-logo {
+        float: left;
+    }
+
+    .slider-content h1 {
+        font-size: 36px;
+    }
+
+    .topbar_right_side {
+        display: none !important;
+    }
+
+    .navbar-nav li.nav-item.d-none {
+        display: block !important;
     }
 }
 
