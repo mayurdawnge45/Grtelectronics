@@ -42,7 +42,7 @@
 
         /* About Description Section */
         .about-description {
-            padding: 60px 2px;
+            padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
@@ -102,7 +102,9 @@
             background-color: #f8f9fa;
             padding: 60px 20px;
         }
-
+        .mission-img img , .vision-img img{
+            border-radius: 10px;
+        }
         .section-title {
             text-align: center;
             font-size: 2.2rem;
@@ -352,6 +354,12 @@
             .hero-content h1 {
                 font-size: 2rem;
             }
+            .hero{
+                height: 300px;
+            }
+            .vision-img {
+                order: 4;
+            }
 
             .hero-content p {
                 font-size: 1rem;
@@ -360,6 +368,7 @@
             .about-description {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+                padding-bottom: 0;
             }
 
             .mission-vision-container {
