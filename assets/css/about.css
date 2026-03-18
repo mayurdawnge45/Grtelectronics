@@ -150,8 +150,7 @@
             padding: 60px 20px;
         }
 
-        .stats .section-title {
-            color: white;
+        .stats .section-title {            
             margin-bottom: 2rem;
         }
 
@@ -271,7 +270,7 @@
             background: linear-gradient(rgba(47, 165, 90, 0.9), rgba(47, 165, 90, 0.9)), url('https://via.placeholder.com/1920x400?text=CTA');
             background-size: cover;
             background-position: center;
-            padding: 6rem 2rem;
+            padding: 60px 20px;
             text-align: center;
             color: white;
         }
