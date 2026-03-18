@@ -104,6 +104,11 @@
         }
         .mission-img img , .vision-img img{
             border-radius: 10px;
+            height: 100%;
+            width: 100%;
+        }
+        .mission-img, .vision-img{            
+            height: 310px;            
         }
         .section-title {
             text-align: center;
