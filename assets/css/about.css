@@ -1,4 +1,7 @@
    /* Hero Section */
+   h2,h3{
+    color: #2fa55a;
+   }
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x500?text=About+Us+Hero');
             background-size: cover;
@@ -38,7 +41,7 @@
 
         /* About Description Section */
         .about-description {
-            padding: 6rem 2rem;
+            padding: 60px 2px;
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
@@ -46,7 +49,10 @@
             gap: 4rem;
             align-items: center;
         }
-
+        .about_img{
+            height: 100%;
+            object-fit: cover;
+        }
         .about-description img {
             width: 100%;
             border-radius: 8px;
@@ -54,11 +60,7 @@
             animation: fadeInScale 0.8s ease-out forwards;
         }
 
-        .about-description-content h2 {
-            font-size: 2.2rem;
-            color: #000;
-            margin-bottom: 1.5rem;
-            opacity: 0;
+        .about-description-content h2 {            
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
@@ -97,14 +99,14 @@
         /* Mission & Vision Section */
         .mission-vision {
             background-color: #f8f9fa;
-            padding: 6rem 2rem;
+            padding: 60px 20px;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            margin-bottom: 4rem;
-            color: #000;
+            margin-bottom: 2rem;
+            /* color: #000; */
         }
 
         .mission-vision-container {
@@ -119,7 +121,7 @@
             background: white;
             padding: 3rem;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
             opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
         }
@@ -144,12 +146,12 @@
         .stats {
             background-color: #000;
             color: white;
-            padding: 6rem 2rem;
+            padding: 60px 20px;
         }
 
         .stats .section-title {
             color: white;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
 
         .stats-container {
@@ -299,14 +301,17 @@
             text-decoration: none;
             display: inline-block;
             animation: fadeInUp 0.8s ease-out 0.4s backwards;
+            transition: 0.3s;
         }
 
         .cta-button-white:hover {
             background-color: #f0f0f0;
+            transform: translate(0px, -10px);
+            
         }
 
        .logo-slider-container {
-            background: white;
+            background: #979797;
             padding: 2rem;
             border-radius: 8px;
             margin-top: 2rem;
@@ -335,7 +340,13 @@
             filter: grayscale(100%);
             transition: filter 0.3s ease;
         }
-
+        .logo-slider .slick-track .slick-slide.slick-current.slick-active.slick-center img{
+            filter: grayscale(0%);
+        }
+        .logo-slider .slick-track .slick-slide{
+            display: flex;
+            justify-content: center;
+        }
         /* Responsive */
         @media (max-width: 768px) {
             .hero-content h1 {
@@ -355,11 +366,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .nav ul {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-
+            
             .about-description-content h2 {
                 font-size: 1.8rem;
             }
@@ -378,16 +385,7 @@
         }
 
         @media (max-width: 480px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
+            
             .hero-content h1 {
                 font-size: 1.5rem;
             }
@@ -429,10 +427,10 @@
         }
 
         /* Intersection Observer - Scroll Animations */
-        .scroll-animate {
+        /* .scroll-animate {
             opacity: 0;
             animation-fill-mode: forwards;
-        }
+        } */
 
         .scroll-animate.in-view {
             animation: fadeInUp 0.8s ease-out forwards;
